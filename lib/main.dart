@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xff84FFFF) ,
-        body:Center(
-          child: Image(
-//            image:NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKcLEDIbwUwh9hpuA3U1eFkn0JVUnlcC6WTucP4yodBlcpp5Ye&usqp=CAU'),
-           image:AssetImage('images/diamond.png')
+        backgroundColor: Colors.tealAccent,
+        body: SafeArea(
+          //container can only have single child . changes for single child layout widget.
+          child: Container(
+            height: 100.0,
+            width: 100.0,
+            // for margin at all edge
+//            margin: EdgeInsets.all(20.0),
+            // for margin for horizontal and verticle
+//            margin: EdgeInsets.symmetric(vertical: 150.0, horizontal: 100.0),
+            margin:EdgeInsets.fromLTRB(100.0, 100.0, 100.0, 100.0),
+            padding: EdgeInsets.all(20.0),
+
+            color: Colors.white,
+            child: Text('Hello'),
           ),
         ),
-        appBar: AppBar(
-          title: Center(child: Text("Live Chat"),
-          ),
-          backgroundColor: Colors.blueGrey,
-        ) ,
       ),
-    ),
-  );
+    );
+  }
 }
