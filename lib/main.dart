@@ -13,21 +13,18 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           //container can only have single child . changes for single child layout widget.
           child:Column(
-            // add main axisize, to minimize the verticle size as per children.
-//            mainAxisSize: MainAxisSize.min,
-
-            // VerticalDirection.down mean it lies on top , if VerticalDirection.up . then it means lying on bottom.
-//            verticalDirection:VerticalDirection.down ,
-
-            // for alignment the main axis to the center, like this are down also.below used spaceEvenly to calculate what column has
-            mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-
+            // for align horizontal axis
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Container(
                 height: 100.0,
                 width: 100.0,
                 color: Colors.white,
                 child: Text('container 1'),
+              ),
+              // SizedBox added below is for adding the spacing between the container.
+              SizedBox(
+               height:20.0
               ),
               Container(
                 width:100.0,
