@@ -14,29 +14,29 @@ class MyApp extends StatelessWidget {
           //container can only have single child . changes for single child layout widget.
           child:Column(
             // for align horizontal axis
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.white,
-                child: Text('container 1'),
+              CircleAvatar(
+                radius:50.0,
+                backgroundImage: AssetImage('images/diamond.png'),
               ),
-              // SizedBox added below is for adding the spacing between the container.
-              SizedBox(
-               height:20.0
+              Text(
+                'Welcome to Live Chat ',
+                style: TextStyle(
+                  fontFamily:'Pacifico' ,
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Container(
-                width:100.0,
-                height:100.0,
-                color:Colors.white70,
-                  child:Text('container 2')
-              ),
-              Container(
-                  width:100.0,
-                  height:100.0,
-                  color:Colors.lightGreenAccent,
-                  child:Text('container 3')
+              Text(
+                'Enter Your Credential',
+                    style:TextStyle(
+                      fontFamily:'SourceSansPro' ,
+                      fontSize: 20.0,
+                      color: Colors.teal.shade100,
+                      letterSpacing:2.5 ,
+                      fontWeight: FontWeight.bold,
+                    )
               ),
             ],
           ),
