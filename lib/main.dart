@@ -9,24 +9,45 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.tealAccent,
+        backgroundColor: Colors.teal,
         body: SafeArea(
           //container can only have single child . changes for single child layout widget.
-          child: Container(
-            height: 100.0,
-            width: 100.0,
-            // for margin at all edge
-//            margin: EdgeInsets.all(20.0),
-            // for margin for horizontal and verticle
-//            margin: EdgeInsets.symmetric(vertical: 150.0, horizontal: 100.0),
-            margin:EdgeInsets.fromLTRB(100.0, 100.0, 100.0, 100.0),
-            padding: EdgeInsets.all(20.0),
+          child:Column(
+            // add main axisize, to minimize the verticle size as per children.
+//            mainAxisSize: MainAxisSize.min,
 
-            color: Colors.white,
-            child: Text('Hello'),
+            // VerticalDirection.down mean it lies on top , if VerticalDirection.up . then it means lying on bottom.
+//            verticalDirection:VerticalDirection.down ,
+
+            // for alignment the main axis to the center, like this are down also.below used spaceEvenly to calculate what column has
+            mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+
+            children: <Widget>[
+              Container(
+                height: 100.0,
+                width: 100.0,
+                color: Colors.white,
+                child: Text('container 1'),
+              ),
+              Container(
+                width:100.0,
+                height:100.0,
+                color:Colors.white70,
+                  child:Text('container 2')
+              ),
+              Container(
+                  width:100.0,
+                  height:100.0,
+                  color:Colors.lightGreenAccent,
+                  child:Text('container 3')
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
+
+
+
